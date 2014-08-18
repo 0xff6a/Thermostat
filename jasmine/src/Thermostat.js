@@ -18,6 +18,10 @@ Thermostat.prototype.maximumTemperature = function() {
 Thermostat.prototype.minimumTemperature = function() {
 	return 10;
 };
+
+Thermostat.prototype.efficiency = function() {
+	return 'good';
+};
 // Player.prototype.play = function(song) {
 //   this.currentlyPlayingSong = song;
 //   this.isPlaying = true;

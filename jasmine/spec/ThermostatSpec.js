@@ -66,4 +66,22 @@ describe('Thermostat:', function() {
 
   });
 
+  describe('reset button', function() {
+
+    it('should reset the temperature to 20', function() {
+      thermostat.resetTemperature;
+      expect(thermostat.temperature).toEqual(20);
+    });
+
+  });
+
+  describe('efficiency function', function() {
+
+    it('should return good for temperature < 18', function() {
+      this.temperature = 17;
+      expect(thermostat.efficiency()).toEqual('good');
+    });
+
+  });
+
  });
