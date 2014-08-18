@@ -20,25 +20,7 @@ Thermostat.prototype.minimumTemperature = function() {
 };
 
 Thermostat.prototype.efficiency = function() {
-	return 'good';
+	if( this.temperature < 18 ) { return 'good'; };
+	if( this.temperature > 25 ) { return 'poor'; };
+	return 'average';
 };
-// Player.prototype.play = function(song) {
-//   this.currentlyPlayingSong = song;
-//   this.isPlaying = true;
-// };
-
-// Player.prototype.pause = function() {
-//   this.isPlaying = false;
-// };
-
-// Player.prototype.resume = function() {
-//   if (this.isPlaying) {
-//     throw new Error("song is already playing");
-//   }
-
-//   this.isPlaying = true;
-// };
-
-// Player.prototype.makeFavorite = function() {
-//   this.currentlyPlayingSong.persistFavoriteStatus(true);
-// };

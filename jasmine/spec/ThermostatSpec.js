@@ -78,8 +78,17 @@ describe('Thermostat:', function() {
   describe('efficiency function', function() {
 
     it('should return good for temperature < 18', function() {
-      this.temperature = 17;
+      thermostat.temperature = 17;
       expect(thermostat.efficiency()).toEqual('good');
+    });
+
+    it('should return poor for temperature > 25', function() {
+      thermostat.temperature = 26;
+      expect(thermostat.efficiency()).toEqual('poor');
+    });
+
+    it('should return average for 18 < temperature < 25', function() {
+      expect(thermostat.efficiency()).toEqual('average');
     });
 
   });
