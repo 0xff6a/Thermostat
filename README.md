@@ -7,7 +7,6 @@ Objectives:
 -----------
 
 - Practice Javascript and Jasmine
-
 - Potentially create discount smart thermostat when Raspberry Pi is hooked up to home thermostat 
 
 Technologies:
