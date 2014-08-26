@@ -69,7 +69,8 @@ describe('Thermostat:', function() {
   describe('reset button', function() {
 
     it('should reset the temperature to 20', function() {
-      thermostat.resetTemperature;
+      thermostat.temperature = 25;
+      thermostat.resetTemperature();
       expect(thermostat.temperature).toEqual(20);
     });
 
@@ -77,17 +78,17 @@ describe('Thermostat:', function() {
 
   describe('efficiency function', function() {
 
-    it('should return good for temperature < 18', function() {
+    it('should return good for temperature <= 18', function() {
       thermostat.temperature = 17;
       expect(thermostat.efficiency()).toEqual('good');
     });
 
-    it('should return poor for temperature > 25', function() {
+    it('should return poor for temperature >= 25', function() {
       thermostat.temperature = 26;
       expect(thermostat.efficiency()).toEqual('poor');
     });
 
-    it('should return average for 18 < temperature < 25', function() {
+    it('should return average for 18 <= temperature <= 25', function() {
       expect(thermostat.efficiency()).toEqual('average');
     });
 

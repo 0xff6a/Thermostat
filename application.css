@@ -1,0 +1,40 @@
+.good {
+	background-color: green;
+}
+
+.poor {
+	background-color: red;
+}
+
+.average {
+	background-color: orange;
+}
+
+button, input {
+	color: black;
+	background-color: white;
+	padding: 5px 10px;
+	border-radius: 6px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 100px;
+	margin-bottom: 20px;
+}
+
+.thermo-control {
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	margin-top: 100px;
+}
+
+.control {
+	margin: 10px;
+	padding-right: 20px;
+}

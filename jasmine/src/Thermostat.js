@@ -19,8 +19,12 @@ Thermostat.prototype.minimumTemperature = function() {
 	return 10;
 };
 
+Thermostat.prototype.resetTemperature = function() {
+	this.temperature = 20;
+};
+
 Thermostat.prototype.efficiency = function() {
-	if( this.temperature < 18 ) { return 'good'; };
-	if( this.temperature > 25 ) { return 'poor'; };
+	if( this.temperature <= 18 ) { return 'good'; };
+	if( this.temperature >= 25 ) { return 'poor'; };
 	return 'average';
 };

@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>ThermostatJS</title>
+	<link href="application.css" rel="stylesheet" type="text/css">
+	<script src='jasmine/src/Thermostat.js'></script>
+  <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+  <meta charset='utf8'>
+</head>
+<body>
+
+	<main>
+		<article class='thermo-control'>
+			<h1><span class='temp'></span>°</h1>
+			<section class='control'>
+		  	<button class='warmer'>▲</button>
+		  	<button class='cooler'>▼</button><br />
+		  </section>
+		  <section class='control'>
+		  	<button class='reset'>Reset</button><br />
+		  </section>
+		  <section class='control'>
+		 		<input class='psm' type='checkbox' checked>PSM</input>
+			</section>
+		<article>
+	</main>
+	<script>
+
+		var thermostat = new Thermostat();
+
+		$(document).ready(function(){
+
+			updateTemperature();
+
+			$('.warmer').on('click', function() {
+				thermostat.increaseTemperature();
+			});
+
+			$('.cooler').on('click', function() {
+				thermostat.decreaseTemperature();
+			});
+
+			$('.reset').on('click', function() {
+				thermostat.resetTemperature();
+			});
+
+			$('.psm').on('change', function() {
+				thermostat.powerSaving = $(this).prop('checked')
+			});
+
+			$('button').on('click', function () {
+				updateTemperature();
+			});
+
+			function updateTemperature() {
+				$('.temp').text(thermostat.temperature);
+				$('body').removeClass('poor average good').addClass(thermostat.efficiency());
+				$.post('http://localhost:4567/temperature_change', { newTemperature: thermostat.temperature });
+			};
+
+		});
+
+	</script>
+</body>
+</html>
