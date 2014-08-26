@@ -6,9 +6,9 @@ Week 7 @ Makers Academy: Optional Javascript challenge
 Objectives:
 -----------
 
--Practice Javascript and Jasmine
+- Practice Javascript and Jasmine
 
--Potentially create discount smart thermostat when Raspberry Pi is hooked up to home thermostat 
+- Potentially create discount smart thermostat when Raspberry Pi is hooked up to home thermostat 
 
 Technologies:
 -------------
@@ -23,7 +23,7 @@ Specification:
 
 - You can decrease the temp with the down button
 
--The minimum temperature is 10 degrees
+- The minimum temperature is 10 degrees
 
 - If power saving mode is on, the maximum temperature is 25 degrees
 
@@ -41,7 +41,7 @@ Specification:
 
 Running the application:
 ------------------------
-- Open jasmine/index.html in any browser
+- Open index.html in any browser
 
 Running the tests:
 ------------------
